@@ -186,11 +186,14 @@ operation modulo10(A,C){
 
 operation reverse(NUM, REVERSENUM){
   1: if zero NUM then goto 0 else goto 2
-  2: do divBy10(NUM, DIVAUX) goto 3
-  3: do load(REMAINDER, NUM, LOADAUX) goto 4
-  4: do modulo10(REMAINDER, MODULOAUX) goto 5
-  5: do multiplyBy10(REVERSENUM, MULTIPLYAUX) goto 6
-  6: do soma(REVERSENUM, REMAINDER) goto 0
+  //Multiply rev_num
+  2: do multiplyBy10(REVERSENUM, AUX) goto 3
+  //add remainder of num divide by 10 to rev_num
+  3: do load(REMAINDER, NUM, AUX) goto 4
+  4: do modulo10(REMAINDER, AUX) goto 5
+  5: do soma(REVERSENUM, REMAINDER) goto 6
+  // divide num by 10
+  6: do divBy10(NUM, AUX) goto 0
 }
 
 // A:=snd(B) usando C,D (extrai o segundo componente do par)
