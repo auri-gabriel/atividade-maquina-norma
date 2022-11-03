@@ -208,8 +208,5 @@ operation snd(A,B,C,D){
 
 // Programa principal
 main {
-  1: do add P 88 goto 2
-  2: do decodificapar(P,FST,SND,AUX) goto 3
-  3: do soma(Y,FST) goto 4
-  4: do soma(Y,SND) goto 0
+  1: do reverse(X,AUX) goto 0
 }  
