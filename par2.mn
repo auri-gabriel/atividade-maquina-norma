@@ -193,7 +193,7 @@ operation reverse(NUM, REVERSENUM){
   4: do modulo10(REMAINDER, AUX) goto 5
   5: do soma(REVERSENUM, REMAINDER) goto 6
   // divide num by 10
-  6: do divBy10(NUM, AUX) goto 0
+  6: do divBy10(NUM, AUX) goto 1
 }
 
 // A:=snd(B) usando C,D (extrai o segundo componente do par)
