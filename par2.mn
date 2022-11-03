@@ -96,6 +96,65 @@ test divBy3(A,C){
  10: do inc A goto 2
 }
 
+operation divBy10(A,C){
+  1: do load(C,A) goto 2
+  2: if zero C then goto 0 else goto 3
+  3: do dec C goto 4
+  4: if zero C then goto false else goto 5
+  5: do dec C goto 6
+  6: if zero C then goto false else goto 7
+  7: do dec C goto 8
+  8: if zero C then goto false else goto 9
+  9: do dec C goto 10
+ 10: if zero C then goto false else goto 11
+ 11: do dec C goto 12
+ 12: if zero C then goto false else goto 13
+ 13: do dec C goto 14
+ 14: if zero C then goto false else goto 15
+ 15: do dec C goto 16
+ 16: if zero C then goto false else goto 17
+ 17: do dec C goto 18
+ 18: if zero C then goto false else goto 19
+ 19: do dec C goto 20
+ 20: if zero C then goto false else goto 21
+ 21: do dec C goto 22
+ 22: do inc A goto 2
+}
+
+test divBy10(A,C){
+  1: do load(C,A) goto 2
+  2: if zero C then goto true else goto 3
+  3: do dec C goto 4
+  4: do inc A goto 5
+  5: if zero C then goto false else goto 6
+  6: do inc A goto 7
+  7: do dec C goto 8
+  8: if zero C then goto false else goto 9
+  9: do inc A goto 10
+ 10: do dec C goto 11
+ 11: if zero C then goto false else goto 12
+ 12: do inc A goto 13
+ 13: do dec C goto 14
+ 14: if zero C then goto false else goto 15
+ 15: do inc A goto 16
+ 16: do dec C goto 17
+ 17: if zero C then goto false else goto 18
+ 18: do inc A goto 19
+ 19: do dec C goto 20
+ 20: if zero C then goto false else goto 21
+ 21: do inc A goto 22
+ 22: do dec C goto 23
+ 23: if zero C then goto false else goto 24
+ 24: do inc A goto 25
+ 25: do dec C goto 26
+ 26: if zero C then goto false else goto 27
+ 27: do inc A goto 28
+ 28: do dec C goto 29
+ 29: if zero C then goto false else goto 30
+ 30: do dec C goto 31
+ 31: do inc A goto 2
+}
+
 // A:=snd(B) usando C,D (extrai o segundo componente do par)
 operation snd(A,B,C,D){
   1: do clear(A) goto 2
