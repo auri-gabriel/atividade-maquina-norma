@@ -181,7 +181,7 @@ operation modulo10(A,C){
   1: load(B,A,AUX) goto 2
   2: do divBy10(B, DIVAUX) goto 3
   3: do multiplyBy10(B, MULTIPLYAUX) goto 4
-  4: 
+  4: do subtrai(A,B)
 }
 
 operation reverse(NUM, REVERSENUM){
