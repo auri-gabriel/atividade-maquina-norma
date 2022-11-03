@@ -155,6 +155,22 @@ test divBy10(A,C){
  31: do inc A goto 2
 }
 
+operation multiplyBy10(A,C){
+  1: do load(C,A) goto 2
+  2: if zero C then goto 0 else goto 3
+  3: do dec C goto 4
+  4: do inc A goto 5
+  5: do inc A goto 6
+  6: do inc A goto 7
+  7: do inc A goto 8
+  8: do inc A goto 9
+  9: do inc A goto 10
+ 10: do inc A goto 11
+ 11: do inc A goto 12
+ 12: do inc A goto 13
+ 13: do inc A goto 2
+}
+
 // A:=snd(B) usando C,D (extrai o segundo componente do par)
 operation snd(A,B,C,D){
   1: do clear(A) goto 2
