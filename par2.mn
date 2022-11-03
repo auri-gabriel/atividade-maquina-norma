@@ -177,6 +177,13 @@ operation subtrai(A,B){
   3: do dec A goto 1
 }
 
+operation modulo10(A,C){
+  1: load(A,B,AUX) goto 2
+  2: do divBy10(B, DIVAUX) goto 3
+  3: do multiplyBy10(B, MULTIPLYAUX) goto 4
+  4: 
+}
+
 operation reverse(NUM, REVERSENUM){
   1: if zero NUM then goto 0 else goto 2
   2: do divBy10(NUM, REMAINDER) goto 3
