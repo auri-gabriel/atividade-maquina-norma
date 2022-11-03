@@ -140,5 +140,5 @@ operation reverse(NUM, REVERSENUM){
 // Programa principal
 main {
   1: do reverse(X,REVERSE) goto 2
-  2: do load(X,REVERSE) goto 0
+  2: do load(Y,REVERSE) goto 0
 }  
