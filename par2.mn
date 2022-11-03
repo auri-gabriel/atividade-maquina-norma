@@ -171,6 +171,12 @@ operation multiplyBy10(A,C){
  13: do inc A goto 2
 }
 
+operation subtrai(A,B){
+  1: if zero B then goto 0 else goto 2
+  2: do dec B goto 3
+  3: do dec A goto 1
+}
+
 operation reverse(NUM, REVERSENUM){
   1: if zero NUM then goto 0 else goto 2
   2: do divBy10(NUM, REMAINDER) goto 3
