@@ -154,6 +154,19 @@ operation findQuotient(A,B){
   5: do dec QUOTIENT goto 6
 }
 
+operation subtract(A,B){
+  1: if zero B then goto 0 else goto 2
+  2: do dec B goto 3
+  3: do dec A goto 1
+}
+
+operation findRemainder(A,B){
+  1: do findQuotient(A,B) goto 2
+  2: do multiplyAB(B, QUOTIENT) goto 3
+  3: do load(A, A_COPY_REMAINDER, A_COPY_REMAINDER_AUX) goto 4
+  4: do subtract(A_COPY_REMAINDER, RESULT) goto 0
+}
+
 // Programa principal
 main {
   1: do add FST 2 goto 2
