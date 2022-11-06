@@ -106,6 +106,24 @@ operation snd(A,B,C,D){
   6: do clear(C) goto 0
 }
 
+
+test menorque(A,B,COPIA_A,COPIA_B,AUX){
+  1: do load(COPIA_A,A,AUX) goto 2
+  2: do load(COPIA_B,B,AUX) goto 3
+  3: if zero COPIA_B then goto 7 else goto 4
+  4: if zero COPIA_A then goto 9 else goto 5
+  5: do dec COPIA_A goto 6
+  6: do dec COPIA_B goto 3
+  7: do clear(COPIA_A) goto 8
+  8: do clear(COPIA_B) goto false
+  9: do clear(COPIA_A) goto 10
+  10: do clear(COPIA_B) goto true
+}
+
+test maiorque(A,B,COPIA_A,COPIA_B,AUX){
+  1: if menorque(B,A,COPIA_A,COPIA_B,AUX) then goto true else goto false
+}
+
 operation multiplyAB(A,B){
    // verifica se A e B sao zero
    1: if zero A then goto 13 else goto 2
@@ -126,6 +144,14 @@ operation multiplyAB(A,B){
    // end loop B
    // retorna 0
   13: do add RESULT 0 goto 0
+}
+
+operation findQuotient(A,B){
+  1: do inc QUOTIENT goto 2
+  2: do clear(REMAINDER) goto 3
+  3: do multiplyAB(B, QUOTIENT) goto 4
+  4: if maiorque(RESULT, A, COPY_RESULT, COPY_A,AUX3) then goto 5 else goto 1
+  5: do dec QUOTIENT goto 6
 }
 
 // Programa principal
