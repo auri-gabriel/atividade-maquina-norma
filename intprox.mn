@@ -130,5 +130,7 @@ operation multiplyAB(A,B){
 
 // Programa principal
 main {
-  1: do decodificapar(X,FST,SND,AUX) goto 3
+  1: do add FST 2 goto 2
+  2: do add SND 5 goto 3
+  3: do multiplyAB(FST,SND) goto 0
 }  
