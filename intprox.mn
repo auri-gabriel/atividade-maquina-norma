@@ -106,6 +106,29 @@ operation snd(A,B,C,D){
   6: do clear(C) goto 0
 }
 
+operation Multiply(A,B){
+   // verifica se A e B sao zero
+   1: if zero A then goto 13 else goto 2
+   2: if zero B then goto 13 else goto 3
+   // Cria copias de A e B
+   3: do load(A_COPY, A, AUX_A_COPY) goto 4
+   4: do load(B_COPY, B, AUX_B_COPY) goto 5
+   // loop B
+   6: do load(ITERATOR_B, B_COPY, AUX_ITERATOR) goto 7
+   7: do dec ITERATOR_B goto 8
+   // loop A
+   8: do load(ITERATOR_A, A_COPY, AUX_ITERATOR) goto 9
+   9: do dec ITERATOR_A goto 10
+  10: do inc RESULT goto 11
+  11: if zero ITERATOR_A then goto 12 else goto 9
+   // end loop A
+  12: if zero ITERATOR_B then goto 0 else goto 7
+   // end loop B
+   // retorna 0
+  13: do add RESULT 0
+
+}
+
 // Programa principal
 main {
   1: do decodificapar(X,FST,SND,AUX) goto 3
