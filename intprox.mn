@@ -163,6 +163,6 @@ operation subtract(A,B){
 // Programa principal
 main {
   1: do decodificapar(X,FST,SND,AUX) goto 2
-  2: do findQuotient(FST,SND) goto 3
-  3: do load(QUOTIENT, Y) goto 0
+  2: do findQuotient(SND,FST) goto 3
+  3: do load(Y, RESULT) goto 0
 }  
