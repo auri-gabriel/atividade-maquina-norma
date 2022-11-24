@@ -170,7 +170,7 @@ operation divideAB(A,B,C,D){
   7: do dec C goto 6
 }
 
-operation modulo(A,B,D,C){
+operation moduloAB(A,B,D,C){
   1: do load(D,A,AUX) goto 2
   2: do divideAB(D,B,DIVAUX) goto 3
   3: do multiplyAB(D,B,MULTIPLYAUX) goto 4
