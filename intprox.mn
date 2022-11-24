@@ -165,9 +165,9 @@ operation divide(A,B,C,D){
   2: do load(B,D) goto 3
   3: do load(A, AUX_A) goto 4
   4: do load(B, AUX_B) goto 5
-	5: do multiplyAB(AUX_A, AUX_B) goto 6
-	6: if menorque(A,RESULT,AUX4, AUX5, AUX6) then goto 7 else goto 1
-	7: do dec C goto 6
+  5: do multiplyAB(AUX_A, AUX_B) goto 6
+  6: if menorque(A,RESULT,AUX4, AUX5, AUX6) then goto 7 else goto 1
+  7: do dec C goto 6
 }
 
 // Programa principal
