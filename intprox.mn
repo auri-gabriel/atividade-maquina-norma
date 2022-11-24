@@ -160,7 +160,7 @@ operation subtract(A,B){
   3: do dec A goto 1
 }
 
-operation divide(A,B,C,D){
+operation divideAB(A,B,C,D){
   1: do inc C goto 2
   2: do load(B,D) goto 3
   3: do load(A, AUX_A) goto 4
@@ -168,6 +168,13 @@ operation divide(A,B,C,D){
   5: do multiplyAB(AUX_A, AUX_B) goto 6
   6: if menorque(A,RESULT,AUX4, AUX5, AUX6) then goto 7 else goto 1
   7: do dec C goto 6
+}
+
+operation modulo(A,B,D,C){
+  1: do load(D,A,AUX) goto 2
+  2: do divideAB(D,B,DIVAUX) goto 3
+  3: do multiplyAB(D,B,MULTIPLYAUX) goto 4
+  4: do subtract(A,D) goto 0
 }
 
 // Programa principal
